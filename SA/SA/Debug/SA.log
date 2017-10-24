@@ -1,0 +1,4 @@
+﻿  test.cpp
+c:\users\allen\documents\github\simulated_annealing\sa\sa\multi_min.h(63): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+c:\users\allen\documents\github\simulated_annealing\sa\sa\test.cpp(15): warning C4018: '<': signed/unsigned mismatch
+  SA.vcxproj -> C:\Users\Allen\Documents\GitHub\Simulated_Annealing\SA\Debug\SA.exe
