@@ -112,6 +112,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="multi_min.h" />
+    <ClInclude Include="TSP.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp" />
