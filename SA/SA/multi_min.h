@@ -3,10 +3,10 @@
 #include<random>
 #include<cmath>
 
-#define ITER_NUM 2000
-#define LAMBDA 0.2				//control the speed of annealing
+#define ITER_NUM 5000
+#define LAMBDA 0.9				//control the speed of annealing
 #define INIT_T 10000
-#define END_T 1
+#define END_T 0.1
 #define PI 3.14159265
 double k = 0.0001;
 
