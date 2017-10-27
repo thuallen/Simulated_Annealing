@@ -30,7 +30,7 @@ std::vector<double> SA(double left, double right) {
 	double best_x = myRandom(left, right);
 	double best_y = func(best_x);
 
-	int t = INIT_T;
+	double t = INIT_T;
 	int cnt = 0;
 	while (t > END_T) {
 		//outer loop

@@ -39,9 +39,14 @@ int main() {
 	time_t T_end = clock();
 	double RunningTime = double(T_end - T_begin) / CLOCKS_PER_SEC;
 
-	std::cout << "程序运行时间 RunningTime = " << RunningTime << std::endl;
-	
-	
+	std::cout << std::endl << "RunningTime = " << RunningTime << std::endl;
+
+	std::fstream fs_TSP;
+	fs_TSP.open("C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\TSP_ans.txt", std::ios::out);
+	for (unsigned int i = 0; i < TSP_y.size(); ++i) {
+		std::cout << TSP_y[i] << std::endl;
+		fs_TSP << TSP_y[i] << std::endl;
+	}
 
 	system("pause");
 	return 0;
