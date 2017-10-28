@@ -14,7 +14,7 @@ using namespace std;
 // transform the coordinate of cities to distance
 void CityDataTranslate() {
 	ifstream read_in;
-	read_in.open("C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\city_info.txt");      
+	read_in.open("C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\data\\tsp\\city_info.txt");      
 	if (!read_in.is_open()){
 		cout << "file reading failed." << endl;
 		return;
@@ -29,7 +29,7 @@ void CityDataTranslate() {
 	read_in >> vex_num;
 
 	fstream fout;
-	fout.open("C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\dist_info.txt", ios::out);
+	fout.open("C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\data\\tsp\\dist_info.txt", ios::out);
 
 	fout << vex_num << endl;
 
@@ -57,7 +57,7 @@ void CityDataTranslate() {
 void CreateGraph(Graph &G) {
 	CityDataTranslate();
 	ifstream read_in;
-	read_in.open("C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\dist_info.txt");
+	read_in.open("C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\data\\tsp\\dist_info.txt");
 	if (!read_in.is_open()){
 		cout << "file reading failed." << endl;
 		return;
@@ -101,7 +101,7 @@ void CreateGraph(Graph &G) {
 	}
 }
 
-TSP_solution SA_TSP(Graph G) {
+TSP_solution SA_TSP(Graph G, std::vector<double> &TSP_y) {
 	srand(unsigned(time(0)));
  
 	double Current_Temperature = INITIAL_TEMPERATURE;
@@ -134,6 +134,7 @@ TSP_solution SA_TSP(Graph G) {
 			}
 			TSP_y.push_back(bestSolution.lenOfPath);
 		}
+		
 		Current_Temperature *= SPEED;  
 	} // while  
 	return bestSolution;

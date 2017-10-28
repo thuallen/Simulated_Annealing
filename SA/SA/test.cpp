@@ -1,53 +1,60 @@
 #include <iostream>  
 #include <fstream>
 #include <sstream>
-#include <ctime> 
 #include "multi_min.h"
 #include "TSP.h"
 
 int main() {
-	/*
+	
 	// part 1: find minimum
 	double left = -1.0;
 	double right = 1.0;
 	// find minimum st x between left and right
-	std::vector<double> res = SA(left, right);
 
-	fstream fs;
-	fs.open("C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\func_min.txt", std::ios::out);
-	for (int i = 0; i < res.size(); ++i) {
-	fs << res[i] << std::endl;
+	std::string filePath = "C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\data\\fun_min\\func_min";
+	for (int i = 0; i < 20; ++i) {
+		std::vector<double> res = SA(left, right);
+		std::fstream fs;
+		std::stringstream ss;
+		std::string tmp;
+		ss << i + 1;
+		ss >> tmp;
+		std::string realPath = filePath + tmp + ".txt";
+		fs.open(realPath, std::ios::out);
+		for (int i = 0; i < res.size(); ++i) {
+			fs << res[i] << std::endl;
+		}
+		fs.close();
 	}
-	*/
-
 	
-	//part 2: TSP
-	// CityDataTranslate();   // 创建城市表
 
-	time_t T_begin = clock();
+	/*
+	//part 2: TSP
 	Graph G;
 	CreateGraph(G);
-
-	// 1. initial w and target function f(w)
-	// 2. random production new solution - eg: ABCDEA --> ABCEDA
-	// 3. judge whether accepted new solution or not
-	// 4. Simulate Annealing
-
-	TSP_solution bestSoluion = SA_TSP(G);
-	Display(G, bestSoluion);
-
-	time_t T_end = clock();
-	double RunningTime = double(T_end - T_begin) / CLOCKS_PER_SEC;
-
-	std::cout << std::endl << "RunningTime = " << RunningTime << std::endl;
-
+	TSP_solution bestSoluion[20];
 	std::fstream fs_TSP;
-	fs_TSP.open("C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\TSP_ans.txt", std::ios::out);
-	for (unsigned int i = 0; i < TSP_y.size(); ++i) {
-		std::cout << TSP_y[i] << std::endl;
-		fs_TSP << TSP_y[i] << std::endl;
+	std::string filePath = "C:\\Users\\Allen\\Documents\\GitHub\\Simulated_Annealing\\SA\\data\\tsp\\TSP_ans";
+	for (int i = 0; i < 20; ++i) {
+	std::vector<double> TSP_y;				// record the changing of length_path
+	bestSoluion[i] = SA_TSP(G, TSP_y);
+	std::cout << "第" << i + 1 << "次运行：" << std::endl;
+	Display(G, bestSoluion[i]);
+	std::stringstream ss;
+	std::string tmp;
+	ss << i + 1;
+	ss >> tmp;
+	std::string realPath = filePath + tmp + ".txt";
+	std::cout << realPath << std::endl;
+	fs_TSP.open(realPath, std::ios::out);
+	for (unsigned int i = 0; i < TSP_y.size(); i += 10) {
+	//std::cout << TSP_y[i] << std::endl;
+	fs_TSP << TSP_y[i] << std::endl;
 	}
-
+	fs_TSP.close();
+	}
+	*/
+	
 	system("pause");
 	return 0;
 }

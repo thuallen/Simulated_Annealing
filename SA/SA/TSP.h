@@ -5,12 +5,10 @@
 
 const int ITER_NUMBER = 500;
 const double SPEED = 0.98;                   
-const double INITIAL_TEMPERATURE = 10000.0;   
-const double MIN_TEMPERATURE = 0.0001;        
+const double INITIAL_TEMPERATURE = 8000.0;   
+const double MIN_TEMPERATURE = 0.05;        
 const int MAX_INT = 999999;
-const double K = 10.0;
-
-static std::vector<double> TSP_y;          // record the changing of length_path
+const double K = 0.05;
 
 typedef struct {
 	int vex_num, arc_num;                    
@@ -25,7 +23,7 @@ typedef struct {
 }TSP_solution;
 
 void CreateGraph(Graph &G);
-TSP_solution SA_TSP(Graph G);
+TSP_solution SA_TSP(Graph G, std::vector<double> &TSP_y);
 TSP_solution FindNewSolution(Graph G, TSP_solution bestSolution);
 double CalculateLength(Graph G, TSP_solution newSolution);
 void Display(Graph G, TSP_solution bestSoluion);

@@ -8,7 +8,7 @@
 #define INIT_T 10000
 #define END_T 0.1
 #define PI 3.14159265
-double k = 0.0001;
+double k = 0.00002;
 
 
 double myRandom(double left, double right) {	// generate a random num between left and right
@@ -59,11 +59,11 @@ std::vector<double> SA(double left, double right) {
 			y.push_back(best_y);
 
 		}
-		std::cout << best_x << "  " << best_y << std::endl;
+
 		t *= LAMBDA;
 		++cnt;
 	}
-
+	std::cout << best_x << "  " << best_y << std::endl;
 	return y;
 
 }
