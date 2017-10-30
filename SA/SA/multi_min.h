@@ -3,11 +3,11 @@
 #include<random>
 #include<cmath>
 
-#define ITER_NUM 5000
+#define ITER_NUM 250
 #define LAMBDA 0.9				//control the speed of annealing
-#define INIT_T 10000
+#define INIT_T 20.0
 #define END_T 0.1
-#define PI 3.14159265
+#define PI 3.141593
 double k = 0.00002;
 
 
@@ -65,5 +65,4 @@ std::vector<double> SA(double left, double right) {
 	}
 	std::cout << best_x << "  " << best_y << std::endl;
 	return y;
-
 }
