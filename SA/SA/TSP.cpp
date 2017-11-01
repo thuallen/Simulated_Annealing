@@ -140,6 +140,17 @@ TSP_solution SA_TSP(Graph G, std::vector<double> &TSP_y) {
 	return bestSolution;
 }
 
+void GetRandomArray(int arry[], int number)
+{
+	int i, k;
+	srand((int)time(0));
+	for (i = 0; i<number - 1; i++)
+	{
+		k = rand() % (number - i) + i;
+		swap(arry[i], arry[k]);
+	}
+}
+
 TSP_solution FindNewSolution(Graph G, TSP_solution bestSolution) {
 	// generate a new solution  
 	TSP_solution newSolution;

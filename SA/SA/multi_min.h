@@ -63,6 +63,6 @@ std::vector<double> SA(double left, double right) {
 		t *= LAMBDA;
 		++cnt;
 	}
-	std::cout << best_x << "  " << best_y << std::endl;
+	std::cout << "x = " << best_x << ",  y = " << best_y << std::endl;
 	return y;
 }

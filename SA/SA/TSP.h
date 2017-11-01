@@ -3,12 +3,12 @@
 #define MAX_CITYNUM 150  
 #include <vector>
 
-const int ITER_NUMBER = 500;
+const int ITER_NUMBER = 100;
 const double SPEED = 0.98;                   
-const double INITIAL_TEMPERATURE = 8000.0;   
-const double MIN_TEMPERATURE = 0.05;        
+const double INITIAL_TEMPERATURE = 50000.0;   
+const double MIN_TEMPERATURE = 100.0;        
 const int MAX_INT = 999999;
-const double K = 0.05;
+const double K = 2.0;
 
 typedef struct {
 	int vex_num, arc_num;                    

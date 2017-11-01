@@ -1,6 +1,6 @@
-﻿  test.cpp
-c:\users\allen\documents\github\simulated_annealing\sa\sa\test.cpp(24): warning C4018: '<': signed/unsigned mismatch
+﻿  TSP.cpp
   Generating Code...
-  Skipping... (no relevant changes detected)
-  TSP.cpp
+  Compiling...
+  test.cpp
+  Generating Code...
   SA.vcxproj -> C:\Users\Allen\Documents\GitHub\Simulated_Annealing\SA\Debug\SA.exe
